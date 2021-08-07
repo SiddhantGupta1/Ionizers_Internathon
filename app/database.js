@@ -8,7 +8,7 @@ username=root
 password=
 */
 
-const sequelize = new Sequelize("internathon", "dellhplinux!#123", "", {
+const sequelize = new Sequelize("internathon", "admin", "dellhplinux!#123", {
   host: "internathon.cedjgswziywb.ap-south-1.rds.amazonaws.com",
   port: "3306",
   dialect: "mysql",
