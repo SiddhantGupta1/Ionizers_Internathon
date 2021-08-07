@@ -1,11 +1,11 @@
 .login{
     max-width: 414px;
-    display: grid;
-    overflow: auto;
-    grid-template-columns: auto auto auto;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
 }
 .Login, .Login-Signup, .Signup{
-    width: 414px;
+    min-width: 414px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,6 +14,12 @@
     background-color: rgba(22, 22, 22, 0.87);
     background-blend-mode: overlay;
     filter: contrast(120%);
+    transition: 1s ease-in-out;
+    transform: translateX(-100%);
+}
+.Login-Signup{
+    position: relative;
+    z-index: 2;
 }
 
 :is(.Login, .Login-Signup, .Signup) header{
@@ -27,11 +33,6 @@
 }
 /*_____________________________________________________LOGIN_____________________________________________________________*/
 :is(.Login, .Signup) p{
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 45px;
-    color: #FFFFFF; 
     margin: 100px 0 45px 0;
 }
 .Login input{
@@ -47,30 +48,19 @@
     margin: 6px 0;
     padding: 11.323px;
 }
-#login-btn{
-    width: 255px;
-    height: 42px;
-    background: radial-gradient(50% 1843.11% at 50% 50%, #FFC727 0%, #FF9C27 100%);
-    box-shadow: 0px 71px 150px rgba(0, 0, 0, 0.0196802), 0px 29.6621px 62.6664px rgba(0, 0, 0, 0.0282725), 0px 15.8588px 33.5045px rgba(0, 0, 0, 0.035), 0px 8.8903px 18.7823px rgba(0, 0, 0, 0.0417275), 0px 4.72157px 9.97515px rgba(0, 0, 0, 0.0503198), 0px 1.96475px 4.15088px rgba(0, 0, 0, 0.07);
-    border-radius: 6px;
-    margin-top: 30px;
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
-    letter-spacing: 0.03em;
-    color: #101010;
-}
+
 .Login section{
     display: flex;
     width: 162.96px;
     height: 42px;
-    margin-top: 90px;
+    margin-top: 120px;
 }
 .Login section img{
     width: 42px;
     height: 42px;
-    margin-right: 18px; 
+    border-radius: 50%;
+    margin-right: 18px;
+    box-shadow: 0px 68.88px 134.4px rgba(0, 0, 0, 0.0196802), 0px 28.7764px 56.1491px rgba(0, 0, 0, 0.0282725), 0px 15.3852px 30.02px rgba(0, 0, 0, 0.035), 0px 8.62484px 16.829px rgba(0, 0, 0, 0.0417275), 0px 4.58059px 8.93774px rgba(0, 0, 0, 0.0503198), 0px 1.90609px 3.71919px rgba(0, 0, 0, 0.07);
 }
 #login-page-btn{
     margin-top: 80px;
@@ -86,6 +76,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: -1;
 }
 
 /*___________________________________________________________LOGIN-SIGNUP_____________________________________________________________*/
@@ -122,8 +113,8 @@
     float: left;
 }
 
-.Login-Signup div section button, .Login-Signup div article button{
-    width: 164px;
+#gotoLogin, #gotoSignup{
+    width: 175px;
     height: 42px;
     background: radial-gradient(50% 1843.11% at 50% 50%, #FFC727 0%, #FF9C27 100%);
     box-shadow: 0px 71px 150px rgba(0, 0, 0, 0.0196802), 0px 29.6621px 62.6664px rgba(0, 0, 0, 0.0282725), 0px 15.8588px 33.5045px rgba(0, 0, 0, 0.035), 0px 8.8903px 18.7823px rgba(0, 0, 0, 0.0417275), 0px 4.72157px 9.97515px rgba(0, 0, 0, 0.0503198), 0px 1.96475px 4.15088px rgba(0, 0, 0, 0.07);
@@ -135,23 +126,19 @@
     letter-spacing: 0.03em;
     color: #101010;
 }
-.Login-Signup div section button{
+#gotoLogin{
     margin-top: 50px;
-    margin-left: -34px;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+    margin-left: -40px;
 }
-.Login-Signup div article button{
-    width: 420px;
+#gotoSignup{
     margin-top: 28px;
-    text-align: left;
-    padding-left: 50px;
 }
 
 #Plane2{
     position: absolute;
     bottom: 80px;
     left: 0;
+    z-index: -1;
 }
 /*___________________________________________________________SIGNUP_____________________________________________________________*/
 .Signup div{
@@ -178,25 +165,12 @@
 #lastname{
     width: 128px;
 }
-#signup-btn{
-    margin-top: 22px;
-    width: 255px;
-    height: 42px;
-    background: radial-gradient(50% 1843.11% at 50% 50%, #FF8227 0%, #FFC327 100%);
-    box-shadow: 0px 71px 150px rgba(0, 0, 0, 0.0196802), 0px 29.6621px 62.6664px rgba(0, 0, 0, 0.0282725), 0px 15.8588px 33.5045px rgba(0, 0, 0, 0.035), 0px 8.8903px 18.7823px rgba(0, 0, 0, 0.0417275), 0px 4.72157px 9.97515px rgba(0, 0, 0, 0.0503198), 0px 1.96475px 4.15088px rgba(0, 0, 0, 0.07);
-    border-radius: 5.66px;
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
-    letter-spacing: 0.03em;
-    color: #101010;
-}
+
 .Signup section{
     display: flex;
     width: 162.96px;
     height: 42px;
-    margin-top: 80px;
+    margin-top: 105px;
 }
 .Signup section img{
     width: 42px;
@@ -217,6 +191,12 @@
     position: absolute;
     bottom: 150px;
     z-index: -1;
+}
+
+
+
+#Login-heading, #Signup-heading, #gotoLogin, #gotoSignup{
+    transition: 1s ease-in-out;
 }
 
 @font-face {
