@@ -4,6 +4,7 @@ var aws = require("aws-sdk");
 const multerS3 = require("multer-s3");
 const multer = require("multer");
 const db = require("./../database/database.js");
+const login = require("./../controllers/login");
 
 aws.config.update({
   secretAccessKey: "oD2YHbXlE4X8pEdxMinNzSkD+NnsSiaq838/6Smc",
@@ -24,6 +25,7 @@ var upload = multer({
 });
 const uploadFiles = upload.array("file", 5);
 
+app.route("/login").post(login.login);
 app.route("/create_user").post(user.register_user);
 app.route("/file_upload").post(uploadFiles, user.uploadFiles);
 
