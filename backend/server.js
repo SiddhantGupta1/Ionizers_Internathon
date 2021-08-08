@@ -1,12 +1,14 @@
 // sequelize-auto -h internathon.cedjgswziywb.ap-south-1.rds.amazonaws.com -d internathon -u admin -x dellhplinux!#123 --dialect mysql -o ./models
 require("dotenv/config");
 const express = require("express");
-const cors = require("cors");
-const yamljs = require("yamljs");
-// const swaggerUi = require("swagger-ui-express");
-// const swaggerDocs = yamljs.load("./swagger.yaml");
-const api = require("./routes/routes.js");
 const app = express();
+const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const yamljs = require("yamljs");
+const swaggerDocs = yamljs.load("./swagger.yaml");
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+const api = require("./routes/routes.js");
 
 app.use(express.json());
 app.use(cors());
