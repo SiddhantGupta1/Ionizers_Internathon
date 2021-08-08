@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 const db = {};
-
-const sequelize = new Sequelize("internathon", "admin", "dellhplinux!#123", {
-  host: "internathon.cedjgswziywb.ap-south-1.rds.amazonaws.com",
+require("dotenv/config");
+const sequelize = new Sequelize(process.env.db_name, db_user, db_password, {
+  host: db_host,
   port: 3306,
   dialect: "mysql",
   define: {
