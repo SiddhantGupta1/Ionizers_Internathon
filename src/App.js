@@ -12,6 +12,10 @@ import ExploreIcon from './Icons/ExploreIcon.svg'
 import UserIcon from './Icons/UserIcon.svg'
 import Card1 from './Icons/Card1.svg'
 import Card2 from './Icons/Card2.svg'
+import Card3 from './Icons/Card3.svg'
+import Card4 from './Icons/Card4.svg'
+import Card5 from './Icons/Card5.svg'
+import Card6 from './Icons/Card6.svg'
 import moreInfo from './Icons/moreInfo.svg'
 import Line from './Icons/Line.svg'
 
@@ -72,33 +76,27 @@ const Home = () => {
     },
     {
       id: 3,
-      pic : Card1,
-      location: "London: The heritage of England",
+      pic : Card3,
+      location: "Africa: The famous markets",
       description: "Standing on the Thames River, London is the capital of England as well as the most populous city in Great Britain. The city is a confluence of the old and the new and is one of the most important tourist destinations in the entire world. It is a city with numerous attractions of all sorts including great architecture and heritage."
     },
     {
       id : 4,
-      pic: Card2,
-      location: "Bora Bora Tourism",
+      pic: Card4,
+      location: "Venice: The City on Sea",
       description: "A part of French Polynesia, this magical island has some of the most beautiful sights to behold"
     },
     {
       id : 5,
-      pic : Card1,
-      location: "London: The heritage of England",
+      pic : Card5,
+      location: "Bali: Group of Islands",
       description: "Standing on the Thames River, London is the capital of England as well as the most populous city in Great Britain. The city is a confluence of the old and the new and is one of the most important tourist destinations in the entire world. It is a city with numerous attractions of all sorts including great architecture and heritage."
     },
     {
       id : 6,
-      pic: Card2,
-      location: "Bora Bora Tourism",
+      pic: Card6,
+      location: "Guinea: Dance Festival",
       description: "A part of French Polynesia, this magical island has some of the most beautiful sights to behold"
-    },
-    {
-      id : 7,
-      pic : Card1,
-      location: "London: The heritage of England",
-      description: "Standing on the Thames River, London is the capital of England as well as the most populous city in Great Britain. The city is a confluence of the old and the new and is one of the most important tourist destinations in the entire world. It is a city with numerous attractions of all sorts including great architecture and heritage."
     },
   ]
   var flag;

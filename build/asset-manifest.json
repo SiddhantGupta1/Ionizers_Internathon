@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.38b3e207.chunk.css",
-    "main.js": "/static/js/main.e3368be1.chunk.js",
-    "main.js.map": "/static/js/main.e3368be1.chunk.js.map",
+    "main.js": "/static/js/main.64539e94.chunk.js",
+    "main.js.map": "/static/js/main.64539e94.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b419e2e1.js",
     "runtime-main.js.map": "/static/js/runtime-main.b419e2e1.js.map",
     "static/js/2.bf66df3c.chunk.js": "/static/js/2.bf66df3c.chunk.js",
@@ -16,6 +16,10 @@
     "static/media/Login.css": "/static/media/edosz.0be6a7a2.ttf",
     "static/media/Card1.a50ff28c.svg": "/static/media/Card1.a50ff28c.svg",
     "static/media/Card2.3872693d.svg": "/static/media/Card2.3872693d.svg",
+    "static/media/Card3.ea5eb7a6.svg": "/static/media/Card3.ea5eb7a6.svg",
+    "static/media/Card4.e75b3d44.svg": "/static/media/Card4.e75b3d44.svg",
+    "static/media/Card5.9d121830.svg": "/static/media/Card5.9d121830.svg",
+    "static/media/Card6.2228a85a.svg": "/static/media/Card6.2228a85a.svg",
     "static/media/ExploreIcon.31ab4347.svg": "/static/media/ExploreIcon.31ab4347.svg",
     "static/media/HomeIcon.12d935fe.svg": "/static/media/HomeIcon.12d935fe.svg",
     "static/media/Line.116e2a13.svg": "/static/media/Line.116e2a13.svg",
@@ -34,6 +38,6 @@
     "static/js/runtime-main.b419e2e1.js",
     "static/js/2.bf66df3c.chunk.js",
     "static/css/main.38b3e207.chunk.css",
-    "static/js/main.e3368be1.chunk.js"
+    "static/js/main.64539e94.chunk.js"
   ]
 }
