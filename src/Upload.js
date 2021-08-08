@@ -61,7 +61,7 @@ const Upload = ({ setFilename, filename}) => {
                     </label>
                     <input id="file-upload" type="file" accept=".jpg, .png, .jpeg" />
                 
-                    <button id="upload-page-btn" >Next&nbsp; <img src={greaterThanwhite} alt="" /> </button>
+                    <a href="/upload details"><button id="upload-page-btn" >Next&nbsp; <img src={greaterThanwhite} alt="" /> </button></a>
                 </form>
 
             </div>
@@ -70,7 +70,7 @@ const Upload = ({ setFilename, filename}) => {
 }
 
 export default Upload
-//href="/upload details"
+//
 
 /*
 
