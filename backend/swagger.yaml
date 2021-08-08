@@ -1,0 +1,169 @@
+openapi: 3.0.0
+info:
+  title: Internathon
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://api.chetanpareek.tech/api
+    variables: {}
+paths:
+  /create_user:
+    post:
+      tags:
+        - Misc
+      summary: api to create user
+      operationId: apitocreateuser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/apitocreateuserrequest"
+            example:
+              fname: icpc
+              lname: iii
+              username: "1"
+              email: "1"
+              password: "1"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+  /file_upload:
+    post:
+      tags:
+        - Misc
+      summary: upload data API
+      operationId: uploaddataAPI
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - file
+                - uploaded_by
+                - location_name
+                - geotags
+                - description
+                - state
+                - city
+                - country
+                - file_name
+              type: object
+              properties:
+                file:
+                  type: string
+                uploaded_by:
+                  type: string
+                  example: chetan
+                location_name:
+                  type: string
+                  example: sikar
+                geotags:
+                  type: string
+                  example: 25.11212, 45.36664
+                description:
+                  type: string
+                  example: nice description
+                state:
+                  type: string
+                  example: Rajasthan
+                city:
+                  type: string
+                  example: sikar
+                country:
+                  type: string
+                  example: india
+                file_name:
+                  type: string
+                  example: swarnabha+resume.pdf
+        required: false
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+  /login:
+    post:
+      tags:
+        - Misc
+      summary: login
+      operationId: login
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/loginrequest"
+            example:
+              email: "1"
+              password: "1"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+  /get_files:
+    get:
+      tags:
+        - Misc
+      summary: get files
+      operationId: getfiles
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+components:
+  schemas:
+    apitocreateuserrequest:
+      title: apitocreateuserrequest
+      required:
+        - fname
+        - lname
+        - username
+        - email
+        - password
+      type: object
+      properties:
+        fname:
+          type: string
+        lname:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        fname: icpc
+        lname: iii
+        username: "1"
+        email: "1"
+        password: "1"
+    loginrequest:
+      title: loginrequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: "1"
+        password: "1"
+tags:
+  - name: Misc
+    description: ""
