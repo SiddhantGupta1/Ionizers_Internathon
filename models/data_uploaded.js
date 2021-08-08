@@ -23,20 +23,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    image_id: {
+    file_id: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    video_id: {
-      type: DataTypes.STRING(45),
-      allowNull: true
-    },
-    image_location: {
-      type: DataTypes.STRING(45),
-      allowNull: true
-    },
-    video_location: {
-      type: DataTypes.STRING(45),
+    file_location: {
+      type: DataTypes.STRING(1024),
       allowNull: true
     },
     state: {
