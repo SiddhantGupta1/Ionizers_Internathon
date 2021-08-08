@@ -7,13 +7,14 @@ import greaterThan from './Icons/greaterThan.svg'
 import Plane1 from './Icons/Plane1.svg'
 import Plane2 from './Icons/Plane2.svg'
 import Plane3 from './Icons/Plane3.svg'
-import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
 var flag = 1
 const Login = ({entry,setEntry}) => {
 
     const [email, setEmail] = useState("")
     const [pass, setPass] = useState("")
+    const history = useHistory()
 
     const shiftAnim = () => {
         const Login = document.getElementById('Login')
@@ -83,8 +84,23 @@ const Login = ({entry,setEntry}) => {
         flag=1
     }
 
-    function loginSubmit() {
-        window.location.href = "/home"
+    useEffect(()=>{
+        if(localStorage.getItem('user-info')){
+            history.push("/home")
+        }
+    }, [])
+    async function loginSubmit() {
+        let item = {email, pass}
+        let result = await fetch("https://api.chetanpareek.tech/api/login",{
+            method: 'post',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+        result = await result.json()
+        localStorage.getItem('user-info', JSON.stringify(item))
+        history.push("/home")
     }
 
 
@@ -94,29 +110,22 @@ const Login = ({entry,setEntry}) => {
         setEntry(data)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
         console.log(entry)
-        axios({
-            url: 'https://api.chetanpareek.tech/graphql',
+        
+        let result = await fetch("https://api.chetanpareek.tech/api/create_user", {
             method: 'post',
-            data: {
-              query: `query{
-                \n  createUser(input:{
-                \n    fname: \"${entry.fname}\"
-                \n    lname: \"${entry.lname}\"
-                \n    email: \"${entry.email}\"
-                \n    username: \"${entry.username}\"
-                \n    password: \"${entry.password}\"
-                \n    
-                \n  })
-                \n}`
-            }
-          }).then((result) => {
-            console.log(result)
-          }).catch((error)=>{
-              console.log(error)
-          });
+            body: JSON.stringify(entry),
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+        })
+        result = await result.json()
+        localStorage.setItem('user-info', JSON.stringify(result))
+        history.push("/home")
+
+
     }
 
 
