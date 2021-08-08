@@ -1,8 +1,11 @@
 import React from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './login.js'
-import Explore from './explore.js'
+import Login from './Login.js'
+import Explore from './Explore.js'
+import Upload from './Upload.js'
+import UploadDetails from './UploadDetails.js'
+import User from './User.js'
 import HomeIcon from './Icons/HomeIcon.svg'
 import AddIcon from './Icons/AddIcon.svg'
 import ExploreIcon from './Icons/ExploreIcon.svg'
@@ -25,6 +28,9 @@ const App = () => {
           </Route>
           <Route path="/home" component={Home} />
           <Route path="/explore" component={Explore} />
+          <Route path="/upload" component={Upload} />
+          <Route path="/upload details" component={UploadDetails} />
+          <Route path="/user" component={User} />
         </Switch>
       </Router> 
   );
@@ -109,7 +115,7 @@ const imageClick = (e) => {
           <img id="" src={Line} alt=""/>
           <img id="" src={AddIcon} alt="" onClick={()=> { window.location.href = "/upload" }} />
           <img id="" src={ExploreIcon} alt="" onClick={()=> { window.location.href = "/explore" }} />
-          <img id="" src={UserIcon} alt="" />
+          <img id="" src={UserIcon} alt="" onClick={()=> { window.location.href = "/user" }} />
         </div>
         <p>Hiii, <br /> Internathon</p>
         <article>Top Picks</article>

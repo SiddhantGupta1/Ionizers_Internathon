@@ -1,5 +1,5 @@
-import React from 'react'
-import './login.css'
+import React,{useState} from 'react'
+import './Login.css'
 import Google from './Icons/Google.png'
 import Facebook from './Icons/Facebook.png'
 import Apple from './Icons/Apple.png'
@@ -7,10 +7,18 @@ import greaterThan from './Icons/greaterThan.svg'
 import Plane1 from './Icons/Plane1.svg'
 import Plane2 from './Icons/Plane2.svg'
 import Plane3 from './Icons/Plane3.svg'
-
+import axios from 'axios'
 
 var flag = 1
-const login = () => {
+const Login = () => {
+
+    const [entry, setEntry] = useState({
+        fname: "",
+        lname: "",
+        username: "",
+        email: "",
+        password: "",
+    })
 
     const shiftAnim = () => {
         const Login = document.getElementById('Login')
@@ -41,7 +49,7 @@ const login = () => {
 
     const loginAnim = () => {
         shiftAnim()
-        document.getElementById('Login-heading').style.transform = "translateX(-334px)"
+        document.getElementById('Login-heading').style.transform = "translate(-334px, 40px)"
         const gotoLogin = document.getElementById('gotoLogin')
 
         gotoLogin.style.transform = "translate(-327px)"
@@ -84,8 +92,41 @@ const login = () => {
         console.log("Login")
         window.location.href = "/home"
     }
-    const signupSubmit = () => {
-        console.log("Signup")
+
+
+    const handleInput = (e) => {
+        let data = { ...entry}
+        data[e.target.name] = e.target.value
+        setEntry(data)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(entry)
+        axios({
+            url: 'https://api.chetanpareek.tech/graphql',
+            method: 'post',
+            data: {
+              query: `query{
+                \n  createUser(input:{
+                \n    fname: \"${entry.fname}\"
+                \n    lname: \"${entry.lname}\"
+                \n    email: \"${entry.email}\"
+                \n    username: \"${entry.username}\"
+                \n    password: \"${entry.password}\"
+                \n    
+                \n  })
+                \n}`
+            }
+          }).then((result) => {
+            console.log(result)
+          }).catch((error)=>{
+              console.log(error)
+          });
+    }
+    
+    const dummy = () => {
+
     }
 
     return (
@@ -94,9 +135,10 @@ const login = () => {
                 <div className="Login" id="Login">
                     <header>Travello</header>
                     <p> </p>
-                    <input type="text" placeholder="Email ID" style={{marginTop:"45px"}} />
-                    <input type="password" placeholder="Password" />
-
+                    <form onChange={handleInput} onSubmit={handleSubmit}>
+                        <input autoComplete="off" type="text" placeholder="Email ID" required style={{marginTop:"45px"}} />
+                        <input autoComplete="off" type="password" placeholder="Password" required />
+                    </form>
                     <section>
                         <img src={Google} alt="Google"/>
                         <img src={Facebook} alt="Facebook"/>
@@ -114,7 +156,7 @@ const login = () => {
                             <p>
                                 <span>Existing User?</span><br/>
                                 Welcome Back!<br/>
-                                Login with ur credentials
+                                Login with your credentials
                             </p>
                             <button id="gotoLogin" onClick={ () =>{ 
                                 if(flag === 1){
@@ -131,15 +173,16 @@ const login = () => {
                             <p>
                                 <span>New User?</span><br/>
                                 We assure,<br/>
-                                U’ll have ur best tym here, Go ahead. 
+                                you’ll have your best time here, Go ahead. 
                             </p>
-                            <button id="gotoSignup" onClick={ () =>{ 
+                            <button type="submit" form="form" id="gotoSignup" onClick={ () =>{ 
                                 if(flag === 1){
                                     signupAnim()
                                 }
                                 else{
-                                    signupSubmit()
+                                    dummy()
                                 }
+                                
                             } }>Sign Up</button>
                         </article>
                     </div>
@@ -149,13 +192,14 @@ const login = () => {
                 <div className="Signup" id="Signup">
                     <header>Travello</header>
                     <p> </p>
-                    <div style={{marginTop:"45px"}}>
-                        <input id="firstname" type="text" placeholder="First Name" />
-                        <input id="lastname" type="text" placeholder="Last Name" />
-                        <input id="emailid" type="text" placeholder="Email id" />
-                        <input id="pass" type="password" placeholder="Set Password" />
-                        <input id="password" type="password" placeholder="Confirm Password" />
-                    </div>
+                    <form onChange={handleInput} onSubmit={handleSubmit} id="form">
+                        <input autoComplete="off" id="firstname" type="text" placeholder="First Name" name="fname" />
+                        <input autoComplete="off" id="lastname" type="text" placeholder="Last Name" name="lname" />
+                        <input autoComplete="off" id="emailid" type="text" placeholder="Email id" name="email" />
+                        <input autoComplete="off" id="username" type="text" placeholder="User Name" name="username" />
+                        <input autoComplete="off" id="pass" type="password" placeholder="Set Password" name="password" />
+                        <input autoComplete="off" id="password" type="password" placeholder="Confirm Password" name="Cpassword" />
+                    </form>
                     
                     <section>
                         <img src={Google} alt="Google"/>
@@ -171,4 +215,4 @@ const login = () => {
     )
 }
 
-export default login;
+export default Login;
