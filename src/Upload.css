@@ -43,6 +43,7 @@ input[type="file"] {
     align-items: center;
     flex-direction: column;
     cursor: pointer;
+    margin-bottom: 25px;
 }
 .file-upload article{
     width: 183px;
@@ -79,7 +80,6 @@ input[type="file"] {
     font-size: 22px;
     line-height: 33px;
     color: #ECECEC;
-    margin-top: 72px;
     display: flex;
     justify-content: center;
     align-items: center;

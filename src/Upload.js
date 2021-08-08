@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Upload.css'
 import HomeIcon from './Icons/HomeIcon.svg'
 import AddIcon from './Icons/AddIcon.svg'
@@ -7,8 +7,39 @@ import UserIcon from './Icons/UserIcon.svg'
 import Line from './Icons/Line.svg'
 import uploadIcon from './Icons/uploadIcon.svg'
 import greaterThanwhite from './Icons/greaterThanwhite.svg'
+import axios from 'axios'
 
-const Upload = () => {
+const Upload = ({ setFilename, filename}) => {
+
+    const [file, setFile] = useState('')
+
+    const handleInput = (e) => {
+        setFile(e.target.files)
+        setFilename(e.target.files[0].name)
+        console.log(file[0])
+        console.log(filename)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        
+
+        var data = new FormData();
+        data.append('file', file[0]);
+        data.append('file_name', filename);
+
+        axios({
+            url: `https://api.chetanpareek.tech/api/file_upload`,
+            method: "post",
+            data: data,
+
+        }).then((result) => {
+            console.log(result)
+          }).catch((error)=>{
+              console.log(error)
+          });
+    }
+
     return (
         <div style={{display:"flex", justifyContent:"center", backgroundColor:"coral"}}>
             <div className="Upload">
@@ -20,16 +51,18 @@ const Upload = () => {
                     <img id="" src={UserIcon} alt="" onClick={()=> { window.location.href = "/user" }} />
                 </section>
 
-                <label for="file-upload" className="file-upload">
-                    <img src={uploadIcon} alt="Upload Icon" />
-                    <article>Upload Image</article>
-                    <p> Supported Format : .jpg, .png.<br />
-                        File Size must not exceed 20 mb.
-                    </p>
-                </label>
-                <input id="file-upload" type="file" accept=".jpg, .png" />
-
-                <a id="upload-page-btn" href="/upload details" >Next&nbsp; <img src={greaterThanwhite} alt="" /></a>
+                <form onSubmit={handleSubmit} onChange={handleInput} >
+                    <label htmlFor="file-upload" className="file-upload">
+                        <img src={uploadIcon} alt="Upload Icon" />
+                        <article>Upload Image</article>
+                        <p> Supported Format : .jpg, .png, .jpeg.<br />
+                            File Size must not exceed 20 mb.
+                        </p>
+                    </label>
+                    <input id="file-upload" type="file" accept=".jpg, .png, .jpeg" />
+                
+                    <button id="upload-page-btn" >Next&nbsp; <img src={greaterThanwhite} alt="" /> </button>
+                </form>
 
             </div>
         </div>
@@ -37,3 +70,34 @@ const Upload = () => {
 }
 
 export default Upload
+//href="/upload details"
+
+/*
+
+    var data = new FormData();
+            data.append('file', file );
+            data.append('uploaded_by', 'chetan');
+            data.append('location_name', 'sikar');
+            data.append('geotags', '25.11212, 45.36664');
+            data.append('description', 'nice description');
+            data.append('state', 'Rajasthan');
+            data.append('city', 'sikar');
+            data.append('country', 'india');
+            data.append('file_name', 'swarnabha+resume.pdf');
+
+        try{
+            const res = await axios.post('/upload', data,{
+                headers: {
+                    'Content-Type': 'multipart/fprm-data'
+                }
+            })
+            const {filename, filePath } = res.data
+            setUploadedFile({filename, filePath})
+        } catch(err){
+            console.log("error")
+        }
+
+
+
+
+ */

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './Login.js'
@@ -20,16 +20,36 @@ const App = () => {
   {
     document.getElementById('mapid').style.display = "none";
   }
+  const [entry, setEntry] = useState({
+    fname: "",
+    lname: "",
+    username: "",
+    email: "",
+    password: "",
+  })
+  const [location, setLocation] = useState({
+    place: "",
+    country : "",
+    state: "",
+    city: "",
+    description: ""
+  })
+
+  const [filename, setFilename] = useState('')
   return (
       <Router>
         <Switch>
           <Route path="/" exact>
-            <Login />
+            <Login entry={entry} setEntry={setEntry} />
           </Route>
           <Route path="/home" component={Home} />
           <Route path="/explore" component={Explore} />
-          <Route path="/upload" component={Upload} />
-          <Route path="/upload details" component={UploadDetails} />
+          <Route path="/upload" >
+            <Upload setLocation={setLocation} setFilename={setFilename} filename={filename} />
+          </Route>
+          <Route path="/upload details">
+            <UploadDetails location={location} entry={entry} setLocation={setLocation} filename={filename} />
+          </Route>
           <Route path="/user" component={User} />
         </Switch>
       </Router> 

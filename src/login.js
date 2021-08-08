@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import './Login.css'
 import Google from './Icons/Google.png'
 import Facebook from './Icons/Facebook.png'
@@ -10,15 +10,10 @@ import Plane3 from './Icons/Plane3.svg'
 import axios from 'axios'
 
 var flag = 1
-const Login = () => {
+const Login = ({entry,setEntry}) => {
 
-    const [entry, setEntry] = useState({
-        fname: "",
-        lname: "",
-        username: "",
-        email: "",
-        password: "",
-    })
+    const [email, setEmail] = useState("")
+    const [pass, setPass] = useState("")
 
     const shiftAnim = () => {
         const Login = document.getElementById('Login')
@@ -88,8 +83,7 @@ const Login = () => {
         flag=1
     }
 
-    const loginSubmit = () => {
-        console.log("Login")
+    function loginSubmit() {
         window.location.href = "/home"
     }
 
@@ -124,10 +118,7 @@ const Login = () => {
               console.log(error)
           });
     }
-    
-    const dummy = () => {
 
-    }
 
     return (
         <div style={{display:"flex", justifyContent:"center", backgroundColor:"coral"}}>
@@ -135,9 +126,26 @@ const Login = () => {
                 <div className="Login" id="Login">
                     <header>Travello</header>
                     <p> </p>
-                    <form onChange={handleInput} onSubmit={handleSubmit}>
-                        <input autoComplete="off" type="text" placeholder="Email ID" required style={{marginTop:"45px"}} />
-                        <input autoComplete="off" type="password" placeholder="Password" required />
+                    <form>
+                        <input 
+                            autoComplete="off"
+                            name="loginemail" 
+                            type="text" 
+                            placeholder="Email ID" 
+                            required 
+                            style={{marginTop:"45px"}}
+                            onChange={(e)=> {
+                                setEmail(e.target.value)
+                            }} />
+                        <input 
+                            autoComplete="off"
+                            name="loginpass" 
+                            type="password" 
+                            placeholder="Password" 
+                            required
+                            onChange={(e) => {
+                                setPass(e.target.value)
+                            }} />
                     </form>
                     <section>
                         <img src={Google} alt="Google"/>
@@ -179,9 +187,7 @@ const Login = () => {
                                 if(flag === 1){
                                     signupAnim()
                                 }
-                                else{
-                                    dummy()
-                                }
+                                
                                 
                             } }>Sign Up</button>
                         </article>

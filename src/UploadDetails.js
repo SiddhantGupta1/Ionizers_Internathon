@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './UploadDetails.css'
 import HomeIcon from './Icons/HomeIcon.svg'
 import AddIcon from './Icons/AddIcon.svg'
@@ -6,16 +6,12 @@ import ExploreIcon from './Icons/ExploreIcon.svg'
 import UserIcon from './Icons/UserIcon.svg'
 import Line from './Icons/Line.svg'
 import postIcon from './Icons/postIcon.svg'
+import axios from 'axios'
 
-const UploadDetails = () => {
+const UploadDetails = ({location, setLocation, entry, file, filename}) => {
 
-    const [location, setLocation] = useState({
-        place: "",
-        country : "",
-        state: "",
-        city: "",
-        description: ""
-    })
+    console.log(file)
+    console.log(filename)
     
     const handleInput = (e) => {
         let data = { ...location}
@@ -25,6 +21,28 @@ const UploadDetails = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(location)
+
+        var data = new FormData();
+        data.append('file', file );
+        data.append('uploaded_by', `${entry.username}`);
+        data.append('location_name', `${location.place}`);
+        data.append('geotags', '25.11212, 45.36664');
+        data.append('description', `${location.description}`);
+        data.append('state', `${location.state}`);
+        data.append('city', `${location.city}`);
+        data.append('country', `${location.country}`);
+
+        axios({
+            url: `https://api.chetanpareek.tech/api/file_upload`,
+            method: "post",
+            data: data
+
+        }).then((result) => {
+            console.log(result)
+          }).catch((error)=>{
+              console.log(error)
+          });
+
     }
 
     return (
@@ -42,19 +60,19 @@ const UploadDetails = () => {
 
                     <div>
                         <p>Add Place</p>
-                        <input type="text" placeholder="Add Place" id="place" name="place" />
+                        <input autoComplete="off"  type="text" placeholder="Add Place" id="place" name="place" />
                     </div>
                     <section>
                         <p>Add Country</p>
-                        <input type="text" placeholder="Add Country" id="country" name="country" />
+                        <input autoComplete="off" type="text" placeholder="Add Country" id="country" name="country" />
                     </section>
                     <article>
                         <p>Add State</p>
-                        <input type="text" placeholder="Add State" id="state" name="state" />
+                        <input autoComplete="off" type="text" placeholder="Add State" id="state" name="state" />
                     </article>
                     <div>
                         <p>Add City</p>
-                        <input type="text" placeholder="Add City" id="city" name="city" />
+                        <input autoComplete="off" type="text" placeholder="Add City" id="city" name="city" />
                     </div>
                     <blockquote>
                         <p>Description</p>
