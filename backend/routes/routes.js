@@ -5,11 +5,11 @@ const multerS3 = require("multer-s3");
 const multer = require("multer");
 const db = require("./../database/database.js");
 const login = require("./../controllers/login");
-
+require("dotenv/config");
 aws.config.update({
-  secretAccessKey: "oD2YHbXlE4X8pEdxMinNzSkD+NnsSiaq838/6Smc",
-  accessKeyId: "AKIAUFJNEO36M5YL5WD5",
-  region: "ap-south-1",
+  secretAccessKey: process.env.aws_s_key,
+  accessKeyId: process.env.aws_k_id,
+  region: process.env.aws_reg,
 });
 
 var s3 = new aws.S3();
