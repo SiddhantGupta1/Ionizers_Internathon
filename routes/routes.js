@@ -28,5 +28,6 @@ const uploadFiles = upload.array("file", 5);
 app.route("/login").post(login.login);
 app.route("/create_user").post(user.register_user);
 app.route("/file_upload").post(uploadFiles, user.uploadFiles);
+app.route("/get_files").get(user.get_files);
 
 module.exports = app;

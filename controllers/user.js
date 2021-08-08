@@ -48,3 +48,10 @@ exports.uploadFiles = async (req, res) => {
     res.send(error);
   }
 };
+
+exports.get_files = async (req, res) => {
+  const data = await db.data_uploaded.findAll({
+    raw: true,
+  });
+  res.send(data);
+};
