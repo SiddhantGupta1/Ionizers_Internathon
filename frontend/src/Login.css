@@ -1,0 +1,210 @@
+.login{
+    max-width: 414px;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+.Login, .Login-Signup, .Signup{
+    min-width: 414px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./Icons/BG.png);
+    background-color: rgba(22, 22, 22, 0.87);
+    background-blend-mode: overlay;
+    filter: contrast(120%);
+    transition: 1s ease-in-out;
+    transform: translateX(-100%);
+}
+.Login-Signup{
+    position: relative;
+    z-index: 2;
+}
+
+:is(.Login, .Login-Signup, .Signup) header{
+   font-family: 'edo sz';
+   font-size: 36px;
+   line-height: 41px;
+   background: linear-gradient(101.57deg, #FFC727 19.24%, #FF8F27 88.42%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   margin-top: 70px;
+}
+/*_____________________________________________________LOGIN_____________________________________________________________*/
+:is(.Login, .Signup) p{
+    margin-top: 130px;
+}
+.Login form{
+    display: flex;
+    flex-direction: column;
+}
+.Login form input{
+    font-family: 'Poppins';
+    font-size: 14px;
+    line-height: 27px;
+    color: #E5E5E5;
+    width: 255px;
+    height: 42px;
+    border: 1px solid #BCBCBC;
+    border-radius: 6px;
+    background: transparent;
+    margin: 10px 0;
+    padding: 11.323px;
+}
+
+.Login section{
+    display: flex;
+    width: 162.96px;
+    height: 42px;
+    margin-top: 120px;
+}
+.Login section img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 18px;
+    box-shadow: 0px 68.88px 134.4px rgba(0, 0, 0, 0.0196802), 0px 28.7764px 56.1491px rgba(0, 0, 0, 0.0282725), 0px 15.3852px 30.02px rgba(0, 0, 0, 0.035), 0px 8.62484px 16.829px rgba(0, 0, 0, 0.0417275), 0px 4.58059px 8.93774px rgba(0, 0, 0, 0.0503198), 0px 1.90609px 3.71919px rgba(0, 0, 0, 0.07);
+}
+#login-page-btn{
+    margin-top: 80px;
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    background: linear-gradient(148.22deg, #FFC727 28.5%, #FF8F27 90.89%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Plane1{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/*___________________________________________________________LOGIN-SIGNUP_____________________________________________________________*/
+.Login-Signup div{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+    width: 350px;
+}
+.Login-Signup div section{
+    text-align: right;
+    width: 135px;
+    float: left;
+}
+.Login-Signup div section h2, .Login-Signup div article h2{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+    margin-bottom: 47px;
+}
+.Login-Signup div section p, .Login-Signup div article p{
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+}
+.Login-Signup div section p span, .Login-Signup div article p span{    font-weight: 600;}
+.Login-Signup div article{
+    text-align: left;
+    width: 135px;
+    float: left;
+}
+
+#gotoLogin, #gotoSignup{
+    width: 175px;
+    height: 42px;
+    background: radial-gradient(50% 1843.11% at 50% 50%, #FFC727 0%, #FF9C27 100%);
+    box-shadow: 0px 71px 150px rgba(0, 0, 0, 0.0196802), 0px 29.6621px 62.6664px rgba(0, 0, 0, 0.0282725), 0px 15.8588px 33.5045px rgba(0, 0, 0, 0.035), 0px 8.8903px 18.7823px rgba(0, 0, 0, 0.0417275), 0px 4.72157px 9.97515px rgba(0, 0, 0, 0.0503198), 0px 1.96475px 4.15088px rgba(0, 0, 0, 0.07);
+    border-radius: 5.66px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    color: #101010;
+}
+#gotoLogin{
+    margin-top: 60px;
+    margin-left: -40px;
+}
+#gotoSignup{
+    margin-top: 36px;
+}
+
+#Plane2{
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    z-index: -1;
+}
+/*___________________________________________________________SIGNUP_____________________________________________________________*/
+.Signup form{
+    width: 255px;
+    height: 210px;
+}
+.Signup form input{
+    width: 255px;
+    height: 42px;
+    border: 1px solid #BCBCBC;
+    border-radius: 5.66148px;
+    background: transparent;
+    margin-bottom: 12px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    line-height: 27px;
+    color: #E5E5E5;
+    padding: 11.323px;
+}
+#firstname{
+    width: 121px;
+    margin-right: 6px;
+}
+#lastname{
+    width: 128px;
+}
+
+.Signup section{
+    display: flex;
+    width: 162.96px;
+    height: 42px;
+    margin-top: 125px;
+}
+.Signup section img{
+    width: 42px;
+    height: 42px;
+    margin-right: 18px; 
+}
+#signup-page-btn{
+    margin-top: 50px;
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    background: linear-gradient(148.22deg, #FFC727 28.5%, #FF8F27 90.89%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Plane3{
+    position: absolute;
+    bottom: 150px;
+    z-index: -1;
+}
+
+
+
+#Login-heading, #Signup-heading, #gotoLogin, #gotoSignup{
+    transition: 1s ease-in-out;
+}
+
+@font-face {
+    font-family: 'edo sz';
+    src: url(./Font/edosz.ttf);
+    font-style: normal;
+}

@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.38b3e207.chunk.css",
+    "main.js": "/static/js/main.5be9ebe1.chunk.js",
+    "main.js.map": "/static/js/main.5be9ebe1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.55032a82.js",
+    "runtime-main.js.map": "/static/js/runtime-main.55032a82.js.map",
+    "static/js/2.a2d656fe.chunk.js": "/static/js/2.a2d656fe.chunk.js",
+    "static/js/2.a2d656fe.chunk.js.map": "/static/js/2.a2d656fe.chunk.js.map",
+    "static/js/3.f8786fcf.chunk.js": "/static/js/3.f8786fcf.chunk.js",
+    "static/js/3.f8786fcf.chunk.js.map": "/static/js/3.f8786fcf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.38b3e207.chunk.css.map": "/static/css/main.38b3e207.chunk.css.map",
+    "static/js/2.a2d656fe.chunk.js.LICENSE.txt": "/static/js/2.a2d656fe.chunk.js.LICENSE.txt",
+    "static/media/AddIcon.02b1f4a0.svg": "/static/media/AddIcon.02b1f4a0.svg",
+    "static/media/Login.css": "/static/media/edosz.0be6a7a2.ttf",
+    "static/media/Card1.a50ff28c.svg": "/static/media/Card1.a50ff28c.svg",
+    "static/media/Card2.3872693d.svg": "/static/media/Card2.3872693d.svg",
+    "static/media/Card3.ea5eb7a6.svg": "/static/media/Card3.ea5eb7a6.svg",
+    "static/media/Card4.e75b3d44.svg": "/static/media/Card4.e75b3d44.svg",
+    "static/media/Card5.9d121830.svg": "/static/media/Card5.9d121830.svg",
+    "static/media/Card6.2228a85a.svg": "/static/media/Card6.2228a85a.svg",
+    "static/media/ExploreIcon.31ab4347.svg": "/static/media/ExploreIcon.31ab4347.svg",
+    "static/media/HomeIcon.12d935fe.svg": "/static/media/HomeIcon.12d935fe.svg",
+    "static/media/Line.116e2a13.svg": "/static/media/Line.116e2a13.svg",
+    "static/media/Plane1.6bffeb8c.svg": "/static/media/Plane1.6bffeb8c.svg",
+    "static/media/Plane2.6c75dd18.svg": "/static/media/Plane2.6c75dd18.svg",
+    "static/media/Plane3.16b50fe3.svg": "/static/media/Plane3.16b50fe3.svg",
+    "static/media/UserIcon.2e402b03.svg": "/static/media/UserIcon.2e402b03.svg",
+    "static/media/greaterThan.0ec1a3f9.svg": "/static/media/greaterThan.0ec1a3f9.svg",
+    "static/media/greaterThanwhite.8b50fbb1.svg": "/static/media/greaterThanwhite.8b50fbb1.svg",
+    "static/media/moreInfo.c69cd35f.svg": "/static/media/moreInfo.c69cd35f.svg",
+    "static/media/postIcon.6382b2f8.svg": "/static/media/postIcon.6382b2f8.svg",
+    "static/media/searchIcon.e5b33579.svg": "/static/media/searchIcon.e5b33579.svg",
+    "static/media/uploadIcon.c4efad40.svg": "/static/media/uploadIcon.c4efad40.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55032a82.js",
+    "static/js/2.a2d656fe.chunk.js",
+    "static/css/main.38b3e207.chunk.css",
+    "static/js/main.5be9ebe1.chunk.js"
+  ]
+}
